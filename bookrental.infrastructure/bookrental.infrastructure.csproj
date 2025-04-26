@@ -23,4 +23,8 @@
     <ProjectReference Include="..\bookrental.core\bookrental.core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
