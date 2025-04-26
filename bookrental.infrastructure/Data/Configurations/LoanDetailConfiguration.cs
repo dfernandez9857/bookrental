@@ -18,6 +18,7 @@ namespace bookrental.infrastructure.Data.Configurations
 
             builder
                 .Property(x => x.Id)
+                .HasColumnName("id")
                 .UseIdentityColumn();
 
             builder
@@ -38,7 +39,6 @@ namespace bookrental.infrastructure.Data.Configurations
             builder.HasOne(ld => ld.BookCopy)
                 .WithMany()
                 .HasForeignKey(ld => ld.BookCopyId)
-                .HasConstraintName("FK_detalle_prestamo_ejemplar")
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder

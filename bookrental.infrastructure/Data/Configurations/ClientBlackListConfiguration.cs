@@ -18,6 +18,7 @@ namespace bookrental.infrastructure.Data.Configurations
 
             builder
                 .Property(x => x.Id)
+                .HasColumnName("id")
                 .UseIdentityColumn();
 
             builder

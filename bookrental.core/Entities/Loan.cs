@@ -23,5 +23,6 @@ namespace bookrental.core.Entities
         public int RegisteredByUserId { get; set; }
         public string LoanChannel { get; set; }
         public ICollection<LoanDetail> LoanDetails { get; set; } = new List<LoanDetail>();
+        public virtual Client Client { get; set; }
     }
 }

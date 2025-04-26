@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace bookrental.infrastructure.Data.Configurations
 {
-    class LoanConfiguration : IEntityTypeConfiguration<Loan>
+    class LoanConfiguration : IEntityTypeConfiguration<Loan> 
     {
         public void Configure(EntityTypeBuilder<Loan> builder)
         {
@@ -18,6 +18,7 @@ namespace bookrental.infrastructure.Data.Configurations
 
             builder
                 .Property(x => x.Id)
+                .HasColumnName("id")
                 .UseIdentityColumn();
 
             builder
@@ -54,6 +55,11 @@ namespace bookrental.infrastructure.Data.Configurations
                 .Property(x => x.DueDate)
                 .HasColumnName("fecha_devolver")
                 .IsRequired();
+
+            builder
+                .HasOne(b => b.Client)
+                .WithMany(c => c.Loans)
+                .HasForeignKey(b => b.ClientId);
 
 
             builder

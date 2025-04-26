@@ -18,5 +18,6 @@ namespace bookrental.core.Entities
         public string IdentityDocument { get; set; }
 
         public ICollection<ClientBlackList> ClientBlackLists { get; set; }
+        public ICollection<Loan> Loans { get; set; } 
     }
 }
