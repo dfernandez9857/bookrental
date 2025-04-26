@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace bookrental.core.Entities
 {
-    public class Client
+    public class ClientBlackList
     {
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        public int ClientId { get; set; }
 
-        public string LastName { get; set; }
+        public string Reason { get; set; }
 
-        public string IdentityDocument { get; set; }
+        public bool Active { get; set; }
 
-        public ICollection<ClientBlackList> ClientBlackLists { get; set; }
+        public virtual Client Client { get; set; }
+
     }
 }

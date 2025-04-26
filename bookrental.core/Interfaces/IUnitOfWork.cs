@@ -13,6 +13,8 @@ namespace bookrental.core.Interfaces
 
         IClientRepository ClientRepository { get; }
 
+        IClientBlackListRepository ClientBlackListRepository { get; }
+
         Task<int> CommitAsync();
     }
 }

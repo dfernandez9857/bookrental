@@ -22,15 +22,42 @@ namespace bookrental.infrastructure.Data.Configurations
 
             builder
                 .Property(x => x.ClientId)
+                .HasColumnName("cliente_id")
                 .IsRequired();
 
             builder
                 .Property(x => x.LoanChannel)
-                .IsRequired()
-                .HasMaxLength(255);
+                .HasColumnName("canal_prestamo")
+                .IsRequired();
 
             builder
-                .ToTable("Loan");
+                .Property(x => x.LoanDate)
+                .HasColumnName("fecha_prestamo")
+                .IsRequired();
+
+            builder
+                .Property(x => x.ReturnDate)
+                .HasColumnName("fecha_devolucion")
+                .IsRequired();
+
+            builder
+                .Property(x => x.LoanStatusId)
+                .HasColumnName("estado_prestamo_id")
+                .IsRequired();
+
+            builder
+                .Property(x => x.RegisteredByUserId)
+                .HasColumnName("usuario_registra_prestamo")
+                .IsRequired();
+
+            builder
+                .Property(x => x.DueDate)
+                .HasColumnName("fecha_devolver")
+                .IsRequired();
+
+
+            builder
+                .ToTable("prestamo");
         }
     }
 }

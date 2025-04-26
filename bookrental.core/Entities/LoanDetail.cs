@@ -10,9 +10,8 @@ namespace bookrental.core.Entities
     {
         public int Id { get; set; }
         public int LoanId { get; set; }
-        public int BookCopyId
-        {
-            get; set;
-        }
+        public int BookCopyId { get; set; }
+        public virtual Loan Loan { get; set; }
+        public virtual BookCopy BookCopy { get; set; }
     }
 }

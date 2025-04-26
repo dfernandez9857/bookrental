@@ -15,6 +15,9 @@ namespace bookrental.infrastructure.Data
         public DbSet<LoanDetail> LoanDetails { get; set; }
 
         public DbSet<Client> Clients { get; set; }
+
+        public DbSet<ClientBlackList> ClientBlackList { get; set; }
+
         public DbSet<BookCopy> BookCopies { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -25,6 +28,9 @@ namespace bookrental.infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new LoanConfiguration());
+            builder.ApplyConfiguration(new LoanDetailConfiguration());
+            builder.ApplyConfiguration(new ClientConfiguration());
+            builder.ApplyConfiguration(new ClientBlackListConfiguration());
         }
     }
 }

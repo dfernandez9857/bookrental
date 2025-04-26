@@ -30,7 +30,9 @@ namespace bookrental.services
                 if (client == null)
                     throw new ArgumentException("Client not found");
 
-                if (client.IsBlacklisted)
+                var isClientBlackListed = await _unitOfWork.ClientBlackListRepository.IsClientBlacklisted(client.Id);
+
+                if (isClientBlackListed)
                     throw new ArgumentException("Client is blacklisted");
 
 

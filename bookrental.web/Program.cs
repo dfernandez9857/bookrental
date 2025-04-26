@@ -23,7 +23,7 @@ builder.Services.AddScoped(typeof(ILoanService), typeof(LoanService));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"),
-                    x => x.MigrationsAssembly("SchoolsAdministrator.Infrastructure"))
+                    x => x.MigrationsAssembly("bookrental.infrastructure"))
 );
 
 

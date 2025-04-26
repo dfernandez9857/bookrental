@@ -14,6 +14,7 @@ namespace bookrental.infrastructure.Data
         private readonly AppDbContext _context;
         private LoanRepository _loanRepository;
         private ClientRepository _clientRepository;
+        private ClientBlackListRepository _clientBlackListRepository;
 
         public UnitOfWork(AppDbContext context)
         {
@@ -23,6 +24,8 @@ namespace bookrental.infrastructure.Data
         public ILoanRepository LoanRepository => _loanRepository ??= new LoanRepository(_context);
 
         public IClientRepository ClientRepository => _clientRepository ??= new ClientRepository(_context);
+
+        public IClientBlackListRepository ClientBlackListRepository => _clientBlackListRepository ??= new ClientBlackListRepository(_context);
 
         public async Task<int> CommitAsync()
         {
