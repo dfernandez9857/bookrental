@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\school.core\bookrental.core.csproj" />
+    <ProjectReference Include="..\bookrental.core\bookrental.core.csproj" />
   </ItemGroup>
 
 </Project>
