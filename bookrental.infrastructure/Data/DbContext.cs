@@ -31,6 +31,7 @@ namespace bookrental.infrastructure.Data
             builder.ApplyConfiguration(new LoanDetailConfiguration());
             builder.ApplyConfiguration(new ClientConfiguration());
             builder.ApplyConfiguration(new ClientBlackListConfiguration());
+            builder.ApplyConfiguration(new BookCopyConfiguration());
         }
     }
 }
